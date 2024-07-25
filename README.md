@@ -1,20 +1,19 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Airline Reservation and Management System
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Overview
+The Airline Reservation and Management System is a comprehensive web application designed to streamline the flight booking process for users. Built using Laravel, Bootstrap, HTML/CSS, and MySQL, this system allows users to register, search for available flights, make bookings, and manage their reservations efficiently. Additionally, it provides admin functionalities for managing flight schedules and user feedback.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Features
+- **User Registration and Login:** Secure user authentication and registration process.
+- **Flight Search and Booking:** Users can search for available flights, view details, and make bookings.
+- **Reservation Management:** Users can view, update, and cancel their bookings.
+- **Admin Dashboard:** Admins can manage flight  and AI schedules tools, edit bookings, and view user feedback.
+- **User Feedback:** Users can provide feedback on their flight experiences, and admins can review and respond to feedback.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Technologies Used
+- **Backend:** Laravel Framework (PHP)
+- **Frontend:**  JavaScript, Bootstrap, HTML5, CSS3
+- **Database:** MySQL
+- **Version Control:** Git
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+   
