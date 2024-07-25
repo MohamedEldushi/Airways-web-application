@@ -1,0 +1,50 @@
+trigger:
+- master  # Define the branch you want to trigger the build
+
+pool:
+  vmImage: 'ubuntu-latest'  # Choose the appropriate image for your Laravel project (e.g., ubuntu-latest, windows-latest)
+
+jobs:
+- job: BuildAndTest
+  displayName: 'Build and Test'
+  steps:
+  - script: |
+      # Navigate to your Laravel project directory
+      cd path/to/your/laravel/project
+
+      # Install project dependencies using Composer
+      composer install
+
+      # Run Laravel Mix (assuming you're using Laravel Mix for asset compilation)
+      npm install
+      npm run production
+    displayName: 'Install Dependencies and Compile Assets'
+
+  - script: |
+      # Navigate to your Laravel project directory
+      cd path/to/your/laravel/project
+
+      # Run database migrations
+      php artisan migrate
+
+      # Run PHPUnit tests (adjust the path and command as needed)
+      ./vendor/bin/phpunit
+    displayName: 'Run Database Migrations and PHPUnit Tests'
+
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/junit.xml'
+    condition: succeededOrFailed()
+    displayName: 'Publish Test Results'
+
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: 'path/to/your/laravel/project'
+      includeRootFolder: true
+    displayName: 'Archive Files'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      artifactName: 'laravel-app'
+    displayName: 'Publish Build Artifacts'
